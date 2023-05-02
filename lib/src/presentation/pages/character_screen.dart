@@ -87,14 +87,6 @@ class _CharactersScreenState extends State<CharactersScreen> {
           backgroundColor: Color.fromRGBO(39, 43, 52, 1),
           title: Row(
             children: [
-              Container(
-                height: 60.0,
-                width: 180.0,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/appbar.png'))),
-              ),
               Text('Characters'),
             ],
           ),
@@ -174,7 +166,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
                     borderRadius: BorderRadius.circular(15.0)),
                 color: Color.fromRGBO(61, 62, 67, 1),
                 child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.25,
+                  // height: MediaQuery.of(context).size.height * 0.25,
                   child: Row(
                     children: [
                       Container(
@@ -257,22 +249,40 @@ class _CharactersScreenState extends State<CharactersScreen> {
                                 color: Colors.white.withOpacity(0.7),
                               ),
                             ),
-                            Text(
-                              character.location!['name']!,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w600,
+                            SizedBox(
+                              width: 200,
+                              child: Text(
+                                character.location!['name']!,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                             VeritcalSpacer(
-                              height: 15.0,
+                              height: 10.0,
                             ),
-                            Text(
-                              'First Seen In: Episode ${(character.episode!.first).split('/').last}',
-                              style: TextStyle(
-                                color: Colors.white.withOpacity(0.7),
-                              ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'First Seen In:',
+                                  style: TextStyle(
+                                    fontSize: 12.0,
+                                    color: Colors.white.withOpacity(0.7),
+                                  ),
+                                ),
+                                Text(
+                                  'Episode ${(character.episode!.first).split('/').last}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
                             )
                           ],
                         ),
