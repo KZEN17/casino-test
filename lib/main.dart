@@ -2,7 +2,6 @@ import 'package:casino_test/src/data/repository/characters_repository.dart';
 import 'package:casino_test/src/injection/main_di_module.dart';
 import 'package:casino_test/src/presentation/bloc/main_bloc.dart';
 import 'package:casino_test/src/presentation/bloc/main_state.dart';
-import 'package:casino_test/src/presentation/pages/character_screen.dart';
 import 'package:casino_test/src/presentation/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
